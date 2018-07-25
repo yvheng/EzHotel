@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,25 +16,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
-            android:label="@strings/title_activity_home"
-        </activity>
-        <activity android:name=".LoginActivity">
-            android:label="@strings/title_activity_login"
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:parentActivityName=".LoginActivity"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             </activity>
-        <activity android:name=".ReservationActivity">
-            android:label="@strings/title_activity_reservation"
-        </activity>
-        <activity android:name=".RoomActivity">
-            android:label="@strings/title_activity_room"
-        </activity>
-        <activity android:name=".StaffActivity">
-            android:label="@strings/title_activity_staff"
-        </activity>
+        <activity
+            android:name=".ReservationActivity"
+            android:label="@string/title_activity_reservation"
+            android:parentActivityName=".HomeActivity"/>
+        <activity
+            android:name=".RoomActivity"
+            android:label="@string/title_activity_room"
+            android:parentActivityName=".HomeActivity"/>
+        <activity
+            android:name=".StaffActivity"
+            android:label="@string/title_activity_staff"
+            android:parentActivityName=".HomeActivity"/>
     </application>
 
 </manifest>
