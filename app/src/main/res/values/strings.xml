@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">EzHotel</string>
+    <string name="txtReservation">Reservation</string>
+    <string name="txtRoom">Room</string>
+    <string name="txtHome">Home</string>
+    <string name="txtStaff">Staff</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="txtPassword">Password</string>
+    <string name="txtUserID">User ID</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtAddReservation">Add Reservation</string>
+    <string name="txtEditReserve">Edit Reservation</string>
+    <string name="txtBrowseReserve">Browse Reservation</string>
 </resources>
