@@ -4,13 +4,23 @@
     <string name="txtRoom">Room</string>
     <string name="txtHome">Home</string>
     <string name="txtStaff">Staff</string>
-    <string name="title_activity_login">Sign in</string>
-
-    <!-- Strings related to login -->
     <string name="txtPassword">Password</string>
     <string name="txtUserID">User ID</string>
     <string name="txtLogin">Login</string>
     <string name="txtAddReservation">Add Reservation</string>
     <string name="txtEditReserve">Edit Reservation</string>
     <string name="txtBrowseReserve">Browse Reservation</string>
+    <string name="txtAddRoom">Add Room</string>
+    <string name="txtEditRoom">Edit Room</string>
+    <string name="txtUpdateRoom">Update Room</string>
+    <string name="txtSearchRoom">Search Room</string>
+    <string name="txtAddStaff">Add Staff</string>
+    <string name="txtEditStaff">Edit Staff</string>
+    <string name="txtSearchStaff">Search Staff</string>
+
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_reservation">Reservation Menu</string>
+    <string name="title_activity_room">Room Menu</string>
+    <string name="title_activity_staff">Staff Menu</string>
 </resources>
