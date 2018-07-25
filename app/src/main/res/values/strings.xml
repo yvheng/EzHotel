@@ -23,4 +23,15 @@
     <string name="title_activity_reservation">Reservation Menu</string>
     <string name="title_activity_room">Room Menu</string>
     <string name="title_activity_staff">Staff Menu</string>
+    <string name="title_activity_checkio">Check In And Check Out</string>
+    <string name="title_activity_payment">Payment</string>
+    <string name="txtCheckIO"><![CDATA[Check In & Check Out]]></string>
+    <string name="txtPayment">Payment</string>
+    <string name="txtCheckIn">Check In</string>
+    <string name="txtCheckOut">Check Out</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
