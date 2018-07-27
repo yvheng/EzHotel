@@ -3,29 +3,22 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:title="@string/txtHome" />
+        <item
             android:id="@+id/nav_reservation"
-            android:icon="@drawable/ic_menu_camera"
             android:title="@string/txtReservation" />
         <item
-            android:id="@+id/nav_room"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/txtRoom" />
-        <item
-            android:id="@+id/nav_staff"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/txtStaff" />
-        <item
-            android:id="@+id/nav_payment"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/txtPayment" />
-        <item
             android:id="@+id/nav_checkIn"
-            android:icon="@drawable/ic_menu_manage"
             android:title="@string/txtCheckIn" />
         <item
             android:id="@+id/nav_checkOut"
-            android:icon="@drawable/ic_menu_manage"
             android:title="@string/txtCheckOut" />
+        <item
+            android:id="@+id/nav_payment"
+            android:title="@string/txtPayment" />
+
+
     </group>
 
 </menu>

@@ -9,14 +9,9 @@
     <string name="txtLogin">Login</string>
     <string name="txtAddReservation">Add Reservation</string>
     <string name="txtEditReserve">Edit Reservation</string>
-    <string name="txtBrowseReserve">Browse Reservation</string>
-    <string name="txtAddRoom">Add Room</string>
-    <string name="txtEditRoom">Edit Room</string>
-    <string name="txtUpdateRoom">Update Room</string>
-    <string name="txtSearchRoom">Search Room</string>
-    <string name="txtAddStaff">Add Staff</string>
-    <string name="txtEditStaff">Edit Staff</string>
-    <string name="txtSearchStaff">Search Staff</string>
+    <string name="txtBrowseReserve">Reservation Record</string>
+
+
 
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_home">Home</string>
@@ -27,9 +22,12 @@
     <string name="title_activity_payment">Payment</string>
     <string name="txtCheckIO"><![CDATA[Check In & Check Out]]></string>
     <string name="txtPayment">Payment</string>
+    <string name="txtMakePayment">Make Payment</string>
+    <string name="txtPaymentRecord">Payment Record</string>
     <string name="txtCheckIn">Check In</string>
     <string name="txtCheckOut">Check Out</string>
-
+    <string name="txtWelcome">Welcome, Ryan!</string>
+    <string name="txtChkInChkOutRecord"><![CDATA[Check In & Check Out Record]]></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

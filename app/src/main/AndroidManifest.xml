@@ -24,35 +24,23 @@ xmlns:tools="http://schemas.android.com/tools" package="com.example.family.ezhot
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
-    <activity
-        android:name=".RoomActivity"
-        android:label="@string/title_activity_room"
-        android:parentActivityName=".HomeActivity"
-        tools:targetApi="jelly_bean" />
 
     <activity
-        android:name=".StaffActivity"
-        android:label="@string/title_activity_staff"
-        android:parentActivityName=".HomeActivity"
-        tools:targetApi="jelly_bean" />
-
-    <activity
-        android:name=".PaymentActivity"
+        android:name=".Payment.PaymentActivity"
         android:label="@string/title_activity_payment"
-        android:parentActivityName=".HomeActivity"
-        tools:targetApi="jelly_bean" />
+        android:theme="@style/AppTheme.NoActionBar" />
     <activity
         android:name=".HomeActivity"
         android:label="@string/title_activity_home"
         android:theme="@style/AppTheme.NoActionBar" />
 
     <activity
-        android:name=".CheckIOActivity"
+        android:name=".CheckIO.CheckIOActivity"
         android:label="@string/title_activity_checkio"
         android:theme="@style/AppTheme.NoActionBar" />
 
     <activity
-        android:name=".ReservationActivity"
+        android:name=".Reservation.ReservationActivity"
         android:label="@string/title_activity_reservation"
         android:theme="@style/AppTheme.NoActionBar" />
 
