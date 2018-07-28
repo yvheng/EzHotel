@@ -10,9 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.family.ezhotel.CheckIO.CheckIOActivity;
 import com.example.family.ezhotel.HomeActivity;
+import com.example.family.ezhotel.LoginActivity;
 import com.example.family.ezhotel.Payment.PaymentActivity;
 import com.example.family.ezhotel.R;
 
@@ -68,8 +70,21 @@ public class ReservationActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    public void addReservation(View v){
+        Intent intent = new Intent(this, AddReservationActivity.class);
+        startActivity(intent);
+    }
+    public void editReservation(View v){
+        Intent intent = new Intent(this, EditReservationActivity.class);
+        startActivity(intent);
+    }
+    public void reservationRecord(View v){
+        Intent intent = new Intent(this, ReservationRecordActivity.class);
+        startActivity(intent);
+    }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+
 
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.

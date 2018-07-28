@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.family.ezhotel.HomeActivity;
 import com.example.family.ezhotel.Payment.PaymentActivity;
@@ -66,6 +67,19 @@ public class CheckIOActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void checkIn(View v){
+        Intent intent = new Intent(this, CheckInActivity.class);
+        startActivity(intent);
+    }
+    public void checkOut(View v){
+        Intent intent = new Intent(this, CheckOutActivity.class);
+        startActivity(intent);
+    }
+    public void CheckIORecord(View v){
+        Intent intent = new Intent(this, CheckIORecordActivity.class);
+        startActivity(intent);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

@@ -10,11 +10,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.family.ezhotel.CheckIO.CheckIOActivity;
+import com.example.family.ezhotel.CheckIO.CheckIORecordActivity;
+import com.example.family.ezhotel.CheckIO.CheckInActivity;
+import com.example.family.ezhotel.CheckIO.CheckOutActivity;
 import com.example.family.ezhotel.HomeActivity;
 import com.example.family.ezhotel.R;
+import com.example.family.ezhotel.Reservation.AddReservationActivity;
+import com.example.family.ezhotel.Reservation.EditReservationActivity;
 import com.example.family.ezhotel.Reservation.ReservationActivity;
+import com.example.family.ezhotel.Reservation.ReservationRecordActivity;
 
 public class PaymentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -66,6 +73,15 @@ public class PaymentActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void makePayment(View v){
+        Intent intent = new Intent(this, MakePaymentActivity.class);
+        startActivity(intent);
+    }
+    public void paymentRecord(View v){
+        Intent intent = new Intent(this, PaymentRecordActivity.class);
+        startActivity(intent);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

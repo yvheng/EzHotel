@@ -7,18 +7,23 @@
     <string name="txtPassword">Password</string>
     <string name="txtUserID">User ID</string>
     <string name="txtLogin">Login</string>
+    <string name="txtLogout">Logout</string>
     <string name="txtAddReservation">Add Reservation</string>
     <string name="txtEditReserve">Edit Reservation</string>
     <string name="txtBrowseReserve">Reservation Record</string>
 
 
-
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_home">Home</string>
     <string name="title_activity_reservation">Reservation Menu</string>
+    <string name="title_activity_addReservation">Add Reservation</string>
+    <string name="title_activity_editReservation">Edit Reservation</string>
+    <string name="title_activity_reservationRecord">Reservation Record</string>
     <string name="title_activity_room">Room Menu</string>
     <string name="title_activity_staff">Staff Menu</string>
     <string name="title_activity_checkio">Check In And Check Out</string>
+    <string name="title_activity_checki">Check In </string>
+    <string name="title_activity_checko">Check Out </string>
     <string name="title_activity_payment">Payment</string>
     <string name="txtCheckIO"><![CDATA[Check In & Check Out]]></string>
     <string name="txtPayment">Payment</string>

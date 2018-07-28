@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.family.ezhotel.CheckIO.CheckIOActivity;
 import com.example.family.ezhotel.Payment.PaymentActivity;
@@ -67,6 +68,28 @@ public class HomeActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    public void logOut(View v){
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void reservation(View v){
+
+        Intent intent = new Intent(this, ReservationActivity.class);
+        startActivity(intent);
+    }
+
+    public void cico(View v){
+
+        Intent intent = new Intent(this, CheckIOActivity.class);
+        startActivity(intent);
+    }
+    public void payment(View v){
+
+        Intent intent = new Intent(this, PaymentActivity.class);
+        startActivity(intent);
+    }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
 
