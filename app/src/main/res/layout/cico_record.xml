@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tViewReservationID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtReservationID" />
+
+    <TextView
+        android:id="@+id/tViewCustName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCustName" />
+
+    <TextView
+        android:id="@+id/tViewCIC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCustIC" />
+
+    <TextView
+        android:id="@+id/tViewCPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCustPhone" />
+
+    <TextView
+        android:id="@+id/tViewRoomType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtRoomType" />
+
+    <TextView
+        android:id="@+id/tViewCheckInDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCheckInDate" />
+
+    <TextView
+        android:id="@+id/tViewCheckOutDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCheckOutDate" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
