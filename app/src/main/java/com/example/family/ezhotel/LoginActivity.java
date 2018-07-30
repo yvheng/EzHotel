@@ -2,13 +2,25 @@ package com.example.family.ezhotel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.family.ezhotel.Model.Reservation;
+import com.example.family.ezhotel.Model.Room;
+import com.google.gson.Gson;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     private Intent intent;
@@ -20,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
         connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         networkInfo = connMgr.getActiveNetworkInfo();
@@ -39,9 +53,12 @@ public class LoginActivity extends AppCompatActivity {
             if (isConnected) {
                 if(username.equals("S001") || username.equals("S002") || username.equals("S003")){
                     if(password.equals("123456")){
+
+                        //Successful login
                         Toast.makeText(getApplicationContext(), "Log In Successfully", Toast.LENGTH_SHORT).show();
                         intent = new Intent(this, HomeActivity.class);
                         startActivity(intent);
+
                     }else{
                         Toast.makeText(getApplicationContext(), "Invalid Password.", Toast.LENGTH_SHORT).show();
                     }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">EzHotel</string>
     <string name="txtReservation">Reservation</string>
+    <string name="txtReservationID">Reservation ID:</string>
     <string name="txtRoom">Room</string>
     <string name="txtHome">Home</string>
     <string name="txtStaff">Staff</string>
@@ -11,7 +12,30 @@
     <string name="txtAddReservation">Add Reservation</string>
     <string name="txtEditReserve">Edit Reservation</string>
     <string name="txtBrowseReserve">Reservation Record</string>
+    <string name="txtCustName">Customer Name: </string>
+    <string name="txtCustIC">Customer IC: </string>
+    <string name="txtCustPhone">Customer Phone: </string>
+    <string name="txtStaffID">Staff ID: </string>
+    <string name="txtRoomType">Room Type: </string>
+    <string name="txtReservationDate">Reservation Date: </string>
+    <string name="txtCheckInDate">Check-In Date: </string>
+    <string name="txtCheckOutDate">Check-Out Date: </string>
+    <string name="txtStatus">Status: </string>
+    <string name="txtPaymentDate">Payment DateTime: </string>
+    <string name="txtPaymentAmount">Payment Amount: RM</string>
 
+    <string-array name="roomType_arrays">
+        <item>Family Room</item>
+        <item>Deluxe Room</item>
+        <item>Executive Suite Room</item>
+        <item>VIP Room</item>
+    </string-array>
+
+    <string-array name="staff_arrays">
+        <item>S001</item>
+        <item>S002</item>
+        <item>S003</item>
+    </string-array>
 
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_home">Home</string>
