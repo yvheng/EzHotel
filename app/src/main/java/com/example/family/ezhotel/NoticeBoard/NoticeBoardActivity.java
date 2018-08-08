@@ -1,7 +1,9 @@
-package com.example.family.ezhotel.Payment;
-
+package com.example.family.ezhotel.NoticeBoard;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,27 +13,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.family.ezhotel.CheckIO.CheckIOActivity;
-import com.example.family.ezhotel.CheckIO.CheckIORecordActivity;
-import com.example.family.ezhotel.CheckIO.CheckInActivity;
-import com.example.family.ezhotel.CheckIO.CheckOutActivity;
 import com.example.family.ezhotel.HomeActivity;
 import com.example.family.ezhotel.LoginActivity;
-import com.example.family.ezhotel.NoticeBoard.NoticeBoardActivity;
+import com.example.family.ezhotel.Payment.PaymentActivity;
 import com.example.family.ezhotel.R;
-import com.example.family.ezhotel.Reservation.AddReservationActivity;
-import com.example.family.ezhotel.Reservation.EditReservationActivity;
 import com.example.family.ezhotel.Reservation.ReservationActivity;
-import com.example.family.ezhotel.Reservation.ReservationRecordActivity;
 
-public class PaymentActivity extends AppCompatActivity
+
+public class NoticeBoardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TextView txtViewNotice;
+    private Boolean firstTime = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activitiy_noticeboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,6 +44,28 @@ public class PaymentActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        txtViewNotice = (TextView) findViewById(R.id.txtViewNotice);
+        String text = String.valueOf(txtViewNotice.getText());
+
+        if(isFirstTime()){
+
+
+            SharedPreferences.Editor editor = getSharedPreferences("MyPref", MODE_PRIVATE).edit();
+            editor.putString("KEY_NOTICE", text);
+            editor.apply();
+        }else{
+
+            SharedPreferences prefs = getSharedPreferences("MyPref", MODE_PRIVATE);
+            String noticeString = prefs.getString("KEY_NOTICE", "No value");
+
+            txtViewNotice.setText(noticeString);
+        }
+
+
+
+
+
     }
 
     @Override
@@ -62,6 +85,19 @@ public class PaymentActivity extends AppCompatActivity
         return true;
     }
 
+    private boolean isFirstTime() {
+        if (firstTime == null) {
+            SharedPreferences mPreferences = this.getSharedPreferences("first_time", Context.MODE_PRIVATE);
+            firstTime = mPreferences.getBoolean("firstTime1", true);
+            if (firstTime) {
+                SharedPreferences.Editor editor = mPreferences.edit();
+                editor.putBoolean("firstTime1", false);
+                editor.commit();
+            }
+        }
+        return firstTime;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -77,17 +113,15 @@ public class PaymentActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void makePayment(View v){
-        Intent intent = new Intent(this, MakePaymentActivity.class);
-        startActivity(intent);
-    }
-    public void paymentRecord(View v){
-        Intent intent = new Intent(this, PaymentRecordActivity.class);
+    @SuppressWarnings("StatementWithEmptyBody")
+
+
+    public void editNotice(View v) {
+
+        Intent intent = new Intent(this, EditNoticeActivity.class);
         startActivity(intent);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -106,14 +140,15 @@ public class PaymentActivity extends AppCompatActivity
             intent = new Intent(this, CheckIOActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_payment) {
-
-        }else if (id == R.id.nav_noticeboard) {
-            intent = new Intent(this, NoticeBoardActivity.class);
+            intent = new Intent(this, PaymentActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_noticeboard) {
+
         } else if (id == R.id.nav_logout) {
             intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

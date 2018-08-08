@@ -15,8 +15,14 @@
             android:id="@+id/nav_checkOut"
             android:title="@string/txtCheckOut" />
         <item
-            android:id="@+id/nav_payment"
-            android:title="@string/txtPayment" />
+        android:id="@+id/nav_payment"
+        android:title="@string/txtPayment" />
+        <item
+            android:id="@+id/nav_noticeboard"
+            android:title="Notice Board" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Log Out" />
 
 
     </group>

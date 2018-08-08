@@ -11,14 +11,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ezhotel"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,45 +39,46 @@
             android:label="@string/title_activity_reservation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".NoticeBoard.NoticeBoardActivity"
+            android:label="Notice Board"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NoticeBoard.EditNoticeActivity"
+            android:label="@string/txtEditNotice"
+            android:parentActivityName=".NoticeBoard.NoticeBoardActivity" />
+        <activity
             android:name=".Reservation.AddReservationActivity"
             android:label="@string/title_activity_addReservation"
             android:parentActivityName=".Reservation.ReservationActivity" />
-
         <activity
             android:name=".Reservation.EditReservationActivity"
             android:label="@string/title_activity_editReservation"
-            android:parentActivityName=".Reservation.ReservationActivity"/>
-
+            android:parentActivityName=".Reservation.ReservationActivity" />
         <activity
             android:name=".Reservation.ReservationRecordActivity"
             android:label="@string/title_activity_reservationRecord"
             android:parentActivityName=".Reservation.ReservationActivity" />
-
         <activity
             android:name=".CheckIO.CheckInActivity"
             android:label="@string/title_activity_checki"
             android:parentActivityName=".CheckIO.CheckIOActivity" />
-
         <activity
             android:name=".CheckIO.CheckOutActivity"
             android:label="@string/title_activity_checko"
-            android:parentActivityName=".CheckIO.CheckIOActivity"/>
-
+            android:parentActivityName=".CheckIO.CheckIOActivity" />
         <activity
             android:name=".CheckIO.CheckIORecordActivity"
             android:label="@string/txtChkInChkOutRecord"
-            android:parentActivityName=".CheckIO.CheckIOActivity"/>
-
+            android:parentActivityName=".CheckIO.CheckIOActivity" />
         <activity
             android:name=".Payment.MakePaymentActivity"
             android:label="@string/txtMakePayment"
-            android:parentActivityName=".Payment.PaymentActivity"/>
-
+            android:parentActivityName=".Payment.PaymentActivity" />
         <activity
             android:name=".Payment.PaymentRecordActivity"
             android:label="@string/txtPaymentRecord"
-            android:parentActivityName=".Payment.PaymentActivity"
-            ></activity>
+            android:parentActivityName=".Payment.PaymentActivity" />
+
     </application>
 
 </manifest>

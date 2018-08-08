@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.family.ezhotel.HomeActivity;
+import com.example.family.ezhotel.LoginActivity;
+import com.example.family.ezhotel.NoticeBoard.NoticeBoardActivity;
 import com.example.family.ezhotel.Payment.PaymentActivity;
 import com.example.family.ezhotel.R;
 import com.example.family.ezhotel.Reservation.ReservationActivity;
@@ -102,7 +104,14 @@ public class CheckIOActivity extends AppCompatActivity
         } else if (id == R.id.nav_payment) {
             intent = new Intent(this, PaymentActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_noticeboard) {
+            intent = new Intent(this, NoticeBoardActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_logout) {
+            intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

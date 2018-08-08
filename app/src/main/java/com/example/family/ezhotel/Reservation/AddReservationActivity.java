@@ -99,7 +99,7 @@ public class AddReservationActivity extends AppCompatActivity  {
                                 else{
                                     checkInMonth = month+1;
                                     checkInDom = day;
-                                    editTextCIDate.setText(year + "-" + (month+1) + "-" + day  );
+                                    editTextCIDate.setText(String.format("%d-%02d-%02d",year, month+1, day));
                                 }
 
                             }
@@ -129,7 +129,7 @@ public class AddReservationActivity extends AppCompatActivity  {
                                     editTextCODate.setText("");
                                 }
                                 else{
-                                    editTextCODate.setText(year + "-" + (month+1) + "-" + day  );
+                                    editTextCODate.setText(String.format("%d-%02d-%02d",year, month+1, day));
                                 }
 
                             }
@@ -201,10 +201,10 @@ public class AddReservationActivity extends AppCompatActivity  {
         }else if(checkOutDate.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please enter Check-Out Date.", Toast.LENGTH_SHORT).show();
         }else if(roomID.equals("")){
-            Toast.makeText(getApplicationContext(), "Room Unavailable, please select other room type." + String.valueOf(roomList.size()), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Room Unavailable, please select other room type." , Toast.LENGTH_SHORT).show();
         }
         else{
-            Reservation newReservation = new Reservation(String.valueOf(reservationId),custName,custIC,custPhone,staffId,roomID,reservationDate,checkInDate,checkOutDate,status);
+            Reservation newReservation = new Reservation(String.valueOf(reservationId),custName,custIC,custPhone,staffId,roomID,reservationDate,checkInDate,checkOutDate,0.0,status);
             reservationList.add(newReservation);
 
             //Save list to shared preference

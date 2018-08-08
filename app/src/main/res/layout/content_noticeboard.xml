@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/hotelbackground"
+    android:background="@drawable/rsz_notice"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.family.ezhotel.Payment.PaymentActivity"
-    tools:showIn="@layout/app_bar_payment">
+    tools:context="com.example.family.ezhotel.NoticeBoard.NoticeBoardActivity"
+    tools:showIn="@layout/app_bar_noticeboard">
+
+
+
+
+
+
+
+
+
 
     <Button
-        android:id="@+id/btnMakePayment"
-        android:layout_width="0dp"
+        android:id="@+id/btnEdit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -19,31 +28,32 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="makePayment"
-        android:text="@string/txtMakePayment"
+        android:onClick="editNotice"
+        android:text="Edit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.9" />
 
-    <Button
-        android:id="@+id/btnPaymentRecord"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/txtViewNotice"
+        android:layout_width="375dp"
+        android:layout_height="255dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="paymentRecord"
-        android:text="@string/txtPaymentRecord"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/txtHotelNotice"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.552" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="-9dp" />
+
+
 </android.support.constraint.ConstraintLayout>

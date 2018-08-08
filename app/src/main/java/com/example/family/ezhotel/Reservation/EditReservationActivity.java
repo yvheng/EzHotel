@@ -39,12 +39,14 @@ public class EditReservationActivity extends AppCompatActivity {
     private Button buttonCIDate,buttonCODate;
     private Spinner sprStaff, sprRoom,sprReservation;
     private EditText etCName, etCIC, etCPhone,etReservationDate,etCheckInDate, etCheckOutDate;
+    private String oldRoomType = null;
     //For validation of checkout Date
     private int checkInDom, checkInMonth;
     //To trace the arrayList position
     private int reservationListPos=0;
     //To get the old reservationID
     private String oldReservationID="";
+    private String oldRoomID="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,7 +128,7 @@ public class EditReservationActivity extends AppCompatActivity {
                                 else{
                                     checkInMonth = month+1;
                                     checkInDom = day;
-                                    etCheckInDate.setText(year + "-" + (month+1) + "-" + day  );
+                                    etCheckInDate.setText(String.format("%d-%02d-%02d",year, month+1, day));
                                 }
 
                             }
@@ -156,7 +158,8 @@ public class EditReservationActivity extends AppCompatActivity {
                                     etCheckOutDate.setText("");
                                 }
                                 else{
-                                    etCheckOutDate.setText(year + "-" + (month+1) + "-" + day  );
+
+                                    etCheckOutDate.setText(String.format("%d-%02d-%02d",year, month+1, day));
                                 }
 
                             }
@@ -165,13 +168,19 @@ public class EditReservationActivity extends AppCompatActivity {
             }
         });
 
+        List<Reservation> reservedList = new ArrayList<Reservation>();
+        for(int i =0;i<reservationList.size();i++){
+            if(reservationList.get(i).getStatus().equals("Reserved"))
+            reservedList.add(reservationList.get(i));
+        }
 
         Reservation spinnerHeader = new Reservation();
         spinnerHeader.setReservationID("Select Reservation");
-        if(!reservationList.get(0).getReservationID().equals("Select Reservation"))
-        reservationList.add(0,spinnerHeader);
+        if(!reservedList.get(0).getReservationID().equals("Select Reservation"))
+            reservedList.add(0,spinnerHeader);
 
-        ArrayAdapter<Reservation> adapter = new ArrayAdapter<Reservation>(this, android.R.layout.simple_spinner_item, reservationList);
+
+        ArrayAdapter<Reservation> adapter = new ArrayAdapter<Reservation>(this, android.R.layout.simple_spinner_item, reservedList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sprReservation.setAdapter(adapter);
 
@@ -189,12 +198,16 @@ public class EditReservationActivity extends AppCompatActivity {
 
                             if(roomID> 100 && roomID < 200){
                                 sprRoom.setSelection(0);
+                                oldRoomType="Family Room";
                             }else if(roomID> 200 && roomID < 300){
                                 sprRoom.setSelection(1);
+                                oldRoomType ="Deluxe Room";
                             }else if(roomID> 300 && roomID < 400){
                                 sprRoom.setSelection(2);
+                                oldRoomType = "Executive Suite Room";
                             }else if(roomID> 400){
                                 sprRoom.setSelection(3);
+                                oldRoomType="VIP Room";
                             }
 
                             sprStaff.setSelection(getIndex(sprStaff, reservationList.get(i).getStaffID()));
@@ -206,6 +219,7 @@ public class EditReservationActivity extends AppCompatActivity {
                             etCheckOutDate.setText(reservationList.get(i).getCheckOutDate());
                             reservationListPos = i;
                             oldReservationID=reservationList.get(i).getReservationID();
+                            oldRoomID = reservationList.get(i).getRoomID();
                             break;
                         }
 
@@ -275,14 +289,30 @@ public class EditReservationActivity extends AppCompatActivity {
         String checkOutDate = String.valueOf(etCheckOutDate.getText());
         String status = "Reserved";
 
-        for(int i=0; i< roomList.size();i++){
-            if(roomList.get(i).getRoomType().equals(roomType) && roomList.get(i).getRoomStatus().equals("Available")){
-                roomID = roomList.get(i).getRoomID();
-                roomList.get(i).setRoomStatus("Unavailable");
-                break;
+
+
+        if(!roomType.equals(oldRoomType)){
+            for(int i=0; i< roomList.size();i++){
+                if(roomList.get(i).getRoomType().equals(oldRoomType)){
+                    roomList.get(i).setRoomStatus("Available");
+                    break;
+                }
 
             }
+            for(int i=0; i< roomList.size();i++){
+                if(roomList.get(i).getRoomType().equals(roomType) && roomList.get(i).getRoomStatus().equals("Available")){
+                    roomID = roomList.get(i).getRoomID();
+                    roomList.get(i).setRoomStatus("Unavailable");
+                    break;
+
+                }
+            }
+
+        }else{
+         roomID = oldRoomID;
+
         }
+
 
         //Successful added reservation
         if(custName.isEmpty()){
@@ -296,10 +326,10 @@ public class EditReservationActivity extends AppCompatActivity {
         }else if(checkOutDate.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please enter Check-Out Date.", Toast.LENGTH_SHORT).show();
         }else if(roomID.equals("")){
-            Toast.makeText(getApplicationContext(), "Room Unavailable, please select other room type." + String.valueOf(roomList.size()), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Room Unavailable, please select other room type." , Toast.LENGTH_SHORT).show();
         }
         else{
-            Reservation newReservation = new Reservation(oldReservationID,custName,custIC,custPhone,staffId,roomID,reservationDate,checkInDate,checkOutDate,status);
+            Reservation newReservation = new Reservation(oldReservationID,custName,custIC,custPhone,staffId,roomID,reservationDate,checkInDate,checkOutDate,0.0,status);
             reservationList.set(reservationListPos,newReservation);
 
             //Save list to shared preference

@@ -23,6 +23,13 @@
     <string name="txtStatus">Status: </string>
     <string name="txtPaymentDate">Payment DateTime: </string>
     <string name="txtPaymentAmount">Payment Amount: RM</string>
+    <string name="txtEditNotice">Edit Notice Board</string>
+    <string name="txtHotelNotice">
+        Food catering service and lucky draw context will be held at dinner time 8.00p.m. on 31 / 8 / 2018, all the hotel staff are invited to attend.
+
+
+
+    </string>
 
     <string-array name="roomType_arrays">
         <item>Family Room</item>

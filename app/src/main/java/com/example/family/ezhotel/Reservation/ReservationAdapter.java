@@ -27,7 +27,7 @@ public class ReservationAdapter  extends ArrayAdapter<Reservation> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView tViewReservationID, tViewCustName, tViewCIC,tViewCPhone, tViewStaffID,tViewRoomType,tViewReservationDate;
+        TextView tViewReservationID, tViewCustName, tViewCIC,tViewCPhone, tViewStaffID,tViewRoomType,tViewReservationDate,tViewStatus;
 
         Reservation reservation = getItem(position);
 
@@ -44,6 +44,7 @@ public class ReservationAdapter  extends ArrayAdapter<Reservation> {
         tViewStaffID = (TextView)rowView.findViewById(R.id.tViewStaffID);
         tViewRoomType = (TextView)rowView.findViewById(R.id.tViewRoomType);
         tViewReservationDate = (TextView)rowView.findViewById(R.id.tViewReservationDate);
+        tViewStatus = (TextView)rowView.findViewById(R.id.tViewStatus);
 
         tViewReservationID.setText(tViewReservationID.getText() +" " + reservation.getReservationID());
         tViewCustName.setText(tViewCustName.getText() +" " + reservation.getCustName());
@@ -51,6 +52,7 @@ public class ReservationAdapter  extends ArrayAdapter<Reservation> {
         tViewCPhone.setText(tViewCPhone.getText() +" " + reservation.getCustPhoneNo());
         tViewStaffID.setText(tViewStaffID.getText() +" " + reservation.getStaffID());
         tViewReservationDate.setText(tViewReservationDate.getText() + " "+ reservation.getReservationDate() );
+        tViewStatus.setText(tViewStatus.getText() + " "+ reservation.getStatus() );
         int roomID = Integer.parseInt(reservation.getRoomID());
 
         String roomType = "";

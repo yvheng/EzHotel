@@ -29,7 +29,7 @@ public class Reservation {
         this.PaymentDateTime= PaymentDateTime;
         this.Status = Status;
     }
-    public Reservation(String ReservationID, String CustName,String CustICNo,String CustPhoneNo, String StaffID, String RoomID, String ReservationDate, String CheckInDate, String CheckOutDate, String Status){
+    public Reservation(String ReservationID, String CustName,String CustICNo,String CustPhoneNo, String StaffID, String RoomID, String ReservationDate, String CheckInDate, String CheckOutDate, double PaymentAmount,String Status){
 
         this.ReservationID = ReservationID;
         this.CustName = CustName;
@@ -40,6 +40,7 @@ public class Reservation {
         this.ReservationDate = ReservationDate;
         this.CheckInDate = CheckInDate;
         this.CheckOutDate = CheckOutDate;
+        this.PaymentAmount=PaymentAmount;
         this.Status = Status;
 
     }

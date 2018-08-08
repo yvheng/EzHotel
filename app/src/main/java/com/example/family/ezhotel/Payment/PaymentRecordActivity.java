@@ -37,7 +37,7 @@ public class PaymentRecordActivity extends AppCompatActivity {
         listViewPayment = (ListView) findViewById(R.id.listViewPayment);
 
         for(int i=0;i<reservationList.size();i++){
-            if(reservationList.get(i).getStatus().equals("Paid")) {
+            if(reservationList.get(i).getPaymentAmount()>0) {
                 validReservationList.add(reservationList.get(i));
             }
 
