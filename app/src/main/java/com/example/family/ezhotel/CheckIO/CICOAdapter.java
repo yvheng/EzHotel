@@ -18,12 +18,15 @@ import java.util.List;
  */
 
 public class CICOAdapter  extends ArrayAdapter<Reservation> {
+
+
     public CICOAdapter(Activity context, int resource, List<Reservation> list) {
         super(context, resource, list);
+
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView tViewReservationID, tViewCustName, tViewCIC,tViewCPhone, tViewRoomType,tViewCheckInDate,tViewCheckOutDate;
+        TextView tViewReservationID, tViewCustName, tViewCIC,tViewCPhone, tViewRoomType,tViewCheckInDate,tViewCheckOutDate,tViewStatusCICO;
 
         Reservation reservation = getItem(position);
 
@@ -40,13 +43,19 @@ public class CICOAdapter  extends ArrayAdapter<Reservation> {
         tViewRoomType = (TextView)rowView.findViewById(R.id.tViewRoomType);
         tViewCheckInDate = (TextView)rowView.findViewById(R.id.tViewCheckInDate);
         tViewCheckOutDate = (TextView)rowView.findViewById(R.id.tViewCheckOutDate);
+        tViewStatusCICO = (TextView) rowView.findViewById(R.id.tViewStatusCICO);
+
 
         tViewReservationID.setText(tViewReservationID.getText() +" " + reservation.getReservationID());
         tViewCustName.setText(tViewCustName.getText() +" " + reservation.getCustName());
         tViewCIC.setText(tViewCIC.getText() +" " + reservation.getCustICNo());
         tViewCPhone.setText(tViewCPhone.getText() +" " + reservation.getCustPhoneNo());
         tViewCheckInDate.setText(tViewCheckInDate.getText() +" " + reservation.getCheckInDate());
-        tViewCheckOutDate.setText(tViewCheckOutDate.getText() + " "+ reservation.getCheckOutDate() );
+        tViewCheckOutDate.setText(tViewCheckOutDate.getText() +" " + reservation.getCheckOutDate());
+        tViewStatusCICO.setText(tViewStatusCICO.getText() +" " + reservation.getStatus());
+
+
+
         int roomID = Integer.parseInt(reservation.getRoomID());
 
         String roomType = "";
@@ -62,9 +71,7 @@ public class CICOAdapter  extends ArrayAdapter<Reservation> {
         tViewRoomType.setText(tViewRoomType.getText() +" " + roomType);
 
 
-
-
-
         return rowView;
     }
+
 }

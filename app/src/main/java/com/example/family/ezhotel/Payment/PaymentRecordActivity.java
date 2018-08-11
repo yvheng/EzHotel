@@ -40,9 +40,8 @@ public class PaymentRecordActivity extends AppCompatActivity {
             if(reservationList.get(i).getPaymentAmount()>0) {
                 validReservationList.add(reservationList.get(i));
             }
-
-
         }
+
         final PaymentAdapter paymentAdapter = new PaymentAdapter(this,R.layout.activity_payment_record,validReservationList);
         listViewPayment.setAdapter(paymentAdapter);
 

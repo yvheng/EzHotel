@@ -130,16 +130,16 @@ public class HomeActivity extends AppCompatActivity
             Reservation reservation1 = new Reservation("10001","Lionel Messi", "900521-14-5514","012-1205173","S001","401","2018-07-21","2018-07-25","2018-07-27",1100.00,date1,"Checked-Out");
             Reservation reservation2 = new Reservation("10002","Thiago Mesei", "931104-14-5017","017-1295246","S002","202","2018-07-25","2018-07-26","2018-07-28",330.00,date2,"Checked-Out");
             Reservation reservation3 = new Reservation("10003","Sergio Messy", "730115-14-5619","013-7665134","S001","101","2018-07-28","2018-07-29","2018-07-31",165.00,date3,"Checked-Out");
-            Reservation reservation4 = new Reservation("10004","Silver Pniesta", "790119-14-5619","013-4955132","S001","101","2018-08-02","2018-08-12","2018-08-14",0.0,"Checked-In");
+            Reservation reservation4 = new Reservation("10004","Silver Pniesta", "790119-14-5619","013-4955132","S001","101","2018-08-02","2018-08-10","2018-08-11",0.0,"Checked-In");
             Reservation reservation5 = new Reservation("10005","Bronze Kniesta", "690330-14-5417","012-4355117","S001","202","2018-08-02","2018-08-12","2018-08-14",0.0,"Checked-In");
             Reservation reservation6 = new Reservation("10006","Golden Aniesta", "890121-14-5313","018-8755176","S002","303","2018-08-05","2018-08-13","2018-08-14",0.0,"Checked-In");
             Reservation reservation7 = new Reservation("10007","Andrea Iniesta", "910105-14-5014","019-6755147","S003","102","2018-08-06","2018-08-12","2018-08-14",0.0,"Checked-In");
-            Reservation reservation8 = new Reservation("10008","Undrea Uneesta", "860222-14-5017","011-3255184","S003","201","2018-08-08","2018-08-13","2018-08-14",0.0,"Checked-In");
-            Reservation reservation9 = new Reservation("10009","Jardu Elba", "770311-14-5517","019-1195343","S001","203","2018-08-10","2018-08-14","2018-08-15",0.0,"Reserved");
+            Reservation reservation8 = new Reservation("10008","Undrea Uneesta", "860222-14-5017","011-3255184","S003","201","2018-08-08","2018-08-13","2018-08-15",0.0,"Checked-In");
+            Reservation reservation9 = new Reservation("10009","Jardu Elba", "770311-14-5517","019-1195343","S001","203","2018-08-10","2018-08-11","2018-08-15",0.0,"Reserved");
             Reservation reservation10 = new Reservation("10010","Jirde Ilba", "810415-14-5519","011-7195349","S001","103","2018-08-10","2018-08-14","2018-08-15",0.0,"Reserved");
             Reservation reservation11 = new Reservation("10011","Jordi Alba", "900111-14-5514","015-8195346","S003","301","2018-08-11","2018-08-14","2018-08-16",0.0,"Reserved");
             Reservation reservation12 = new Reservation("10012","Korbi Alda", "850217-14-5513","013-9195342","S003","401","2018-08-12","2018-08-14","2018-08-17",0.0,"Reserved");
-            Reservation reservation13 = new Reservation("10013","Berdu Alra", "890321-14-5511","012-0195341","S002","302","2018-08-14","2018-08-14","2018-08-17",0.0,"Reserved");
+            Reservation reservation13 = new Reservation("10013","Berdu Alra", "890321-14-5511","012-0195341","S002","302","2018-08-14","2018-08-15","2018-08-17",0.0,"Reserved");
 
             if(reservationList.isEmpty()){
                 reservationList.add(reservation1);
