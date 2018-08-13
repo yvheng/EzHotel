@@ -39,6 +39,12 @@
         android:text="@string/txtRoomType" />
 
     <TextView
+        android:id="@+id/textViewRoomID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Room ID:" />
+
+    <TextView
         android:id="@+id/tViewCheckInDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

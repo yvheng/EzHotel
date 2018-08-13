@@ -26,7 +26,7 @@ public class CICOAdapter  extends ArrayAdapter<Reservation> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView tViewReservationID, tViewCustName, tViewCIC,tViewCPhone, tViewRoomType,tViewCheckInDate,tViewCheckOutDate,tViewStatusCICO;
+        TextView tViewReservationID, tViewCustName, tViewCIC,tViewCPhone, tViewRoomType,tViewCheckInDate,tViewCheckOutDate,tViewStatusCICO,textViewRoomID;
 
         Reservation reservation = getItem(position);
 
@@ -35,7 +35,7 @@ public class CICOAdapter  extends ArrayAdapter<Reservation> {
         View rowView = inflater.inflate(R.layout.cico_record, parent, false);
 
 
-
+        textViewRoomID = (TextView)rowView.findViewById(R.id.textViewRoomID);
         tViewReservationID = (TextView)rowView.findViewById(R.id.tViewReservationID);
         tViewCustName = (TextView)rowView.findViewById(R.id.tViewCustName);
         tViewCIC = (TextView)rowView.findViewById(R.id.tViewCIC);
@@ -46,6 +46,7 @@ public class CICOAdapter  extends ArrayAdapter<Reservation> {
         tViewStatusCICO = (TextView) rowView.findViewById(R.id.tViewStatusCICO);
 
 
+        textViewRoomID.setText(textViewRoomID.getText() +" " + reservation.getRoomID());
         tViewReservationID.setText(tViewReservationID.getText() +" " + reservation.getReservationID());
         tViewCustName.setText(tViewCustName.getText() +" " + reservation.getCustName());
         tViewCIC.setText(tViewCIC.getText() +" " + reservation.getCustICNo());
