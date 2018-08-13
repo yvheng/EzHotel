@@ -160,11 +160,14 @@ public class HomeActivity extends AppCompatActivity
 
             String roomJSONString = new Gson().toJson(roomList);
             String reservationJSONString = new Gson().toJson(reservationList);
+            String savedReservationJSONString = new Gson().toJson(reservation1);
 
             appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.getApplicationContext());
             SharedPreferences.Editor editor = appSharedPrefs.edit();
             editor.putString("KEY_ROOM", roomJSONString);
             editor.putString("KEY_RESERVATION", reservationJSONString);
+            editor.putString("KEY_SAVEDRESERVATION",savedReservationJSONString);
+
 
             editor.commit();
         }

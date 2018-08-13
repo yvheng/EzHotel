@@ -38,6 +38,7 @@ public class AddReservationActivity extends AppCompatActivity  {
     private List<Reservation> reservationList;
     //For validation of checkout Date
     private int checkInDom, checkInMonth;
+    private int continueReservationId = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,11 +72,24 @@ public class AddReservationActivity extends AppCompatActivity  {
         roomList = new Gson().fromJson(roomJSONString, type1);
         reservationList = new Gson().fromJson(reservationJSONString, type2);
 
+        String savedReservationJSON = appSharedPrefs.getString("KEY_SAVEDRESERVATION", null);
+        Reservation savedReservation = new Gson().fromJson(savedReservationJSON, Reservation.class);
+        if(savedReservation.getPaymentAmount()<0){
+            continueReservationId = Integer.parseInt(savedReservation.getReservationID());
+            editTextCName.setText(savedReservation.getCustName());
+            editTextCIC.setText(savedReservation.getCustICNo());
+            editTextCPhone.setText(savedReservation.getCustPhoneNo());
+            editTextCIDate.setText(savedReservation.getCheckInDate());
+            editTextCODate.setText(savedReservation.getCheckOutDate());
+
+
+        }
+
         //call spinner method to set values
         roomIDSpinner();
         staffIDSpinner();
 
-      //DatePicker for checkIn Date
+        //DatePicker for checkIn Date
         btnCIDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -166,7 +180,7 @@ public class AddReservationActivity extends AppCompatActivity  {
         spnRoomID.setAdapter(adapter);
     }
 
-       public void addReservation(View v){
+    public void addReservation(View v){
 
         int reservationId = reservationList.size()+10001;
         String custName = String.valueOf(editTextCName.getText());
@@ -204,22 +218,27 @@ public class AddReservationActivity extends AppCompatActivity  {
             Toast.makeText(getApplicationContext(), "Room Unavailable, please select other room type." , Toast.LENGTH_SHORT).show();
         }
         else{
+            if(continueReservationId!=0){
+                reservationId=continueReservationId;
+            }
             Reservation newReservation = new Reservation(String.valueOf(reservationId),custName,custIC,custPhone,staffId,roomID,reservationDate,checkInDate,checkOutDate,0.0,status);
             reservationList.add(newReservation);
 
             //Save list to shared preference
             String roomJSONString = new Gson().toJson(roomList);
             String reservationJSONString = new Gson().toJson(reservationList);
+            String savedReservationJSONString = new Gson().toJson(newReservation);
 
             SharedPreferences appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.getApplicationContext());
             SharedPreferences.Editor editor = appSharedPrefs.edit();
             editor.putString("KEY_ROOM", roomJSONString);
             editor.putString("KEY_RESERVATION", reservationJSONString);
+            editor.putString("KEY_SAVEDRESERVATION",savedReservationJSONString);
             editor.commit();
 
 
             Toast.makeText(getApplicationContext(),"Reservation is added successfully." , Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, AddReservationActivity.class);
+            Intent intent = new Intent(this, AnotherReservationActivity.class);
             startActivity(intent);
         }
 

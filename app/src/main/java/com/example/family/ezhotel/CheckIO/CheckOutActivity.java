@@ -62,7 +62,7 @@ public class CheckOutActivity extends AppCompatActivity {
         coEtRoomType.setEnabled(false);
         coEtCheckOutDate.setEnabled(false);
 
-        List<Reservation> reservedList = new ArrayList<Reservation>();
+        final List<Reservation> reservedList = new ArrayList<Reservation>();
         for(int i =0;i<reservationList.size();i++){
             if(reservationList.get(i).getStatus().equals("Checked-In"))
                 reservedList.add(reservationList.get(i));
@@ -86,8 +86,9 @@ public class CheckOutActivity extends AppCompatActivity {
 
                 }else{
                     String reservationID = parent.getItemAtPosition(position).toString();
+                    int tempRoomID = parent.getSelectedItemPosition();
                     for(int i=0;i<reservationList.size();i++){
-                        if(reservationID.equals(reservationList.get(i).getReservationID())){
+                        if(reservationID.equals(reservationList.get(i).getReservationID())  && reservationList.get(i).getRoomID().equals(reservedList.get(tempRoomID).getRoomID())){
                             int roomID = Integer.parseInt(reservationList.get(i).getRoomID());
 
                             if(roomID> 100 && roomID < 200){

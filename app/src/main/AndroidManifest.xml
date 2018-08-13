@@ -51,6 +51,10 @@
             android:label="@string/title_activity_addReservation"
             android:parentActivityName=".Reservation.ReservationActivity" />
         <activity
+            android:name=".Reservation.AnotherReservationActivity"
+            android:label="@string/txtAnotherRoom"
+            android:parentActivityName=".Reservation.ReservationActivity" />
+        <activity
             android:name=".Reservation.EditReservationActivity"
             android:label="@string/title_activity_editReservation"
             android:parentActivityName=".Reservation.ReservationActivity" />

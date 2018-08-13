@@ -43,7 +43,7 @@
         <item>S002</item>
         <item>S003</item>
     </string-array>
-
+    <string name="txtAnotherRoom">Add another room?</string>
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_home">Home</string>
     <string name="title_activity_reservation">Reservation Menu</string>
